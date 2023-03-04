@@ -10,6 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import com.example.happybirthday.ui.theme.HappyBirthdayTheme
 
 class MainActivity : ComponentActivity() {
@@ -29,9 +30,14 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun BirthdayGreetingWithText(message: String) {
+fun BirthdayGreetingWithText(message: String, from: String) {
     Text(
-        text = message
+        text = message,
+        fontSize = 36.sp
+    )
+    Text(
+        text = from,
+        fontSize = 24.sp
     )
 }
 
@@ -40,6 +46,6 @@ fun BirthdayGreetingWithText(message: String) {
 @Composable
 fun BirthdayCardPreview() {
     HappyBirthdayTheme {
-        BirthdayGreetingWithText("Happy Birthday Blaine!")
+        BirthdayGreetingWithText("Happy Birthday Nelly!", "- from Blaine")
     }
 }
