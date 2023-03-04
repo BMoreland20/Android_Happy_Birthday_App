@@ -3,6 +3,8 @@ package com.example.happybirthday
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -23,6 +25,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
+                    BirthdayGreetingWithText("Happy Birthday Nelly!", "- from Blaine")
                 }
             }
         }
@@ -31,18 +34,19 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun BirthdayGreetingWithText(message: String, from: String) {
-    Text(
-        text = message,
-        fontSize = 36.sp
-    )
-    Text(
-        text = from,
-        fontSize = 24.sp
-    )
+    Column {
+        Text(
+            text = message,
+            fontSize = 36.sp,
+        )
+        Text(
+            text = from,
+            fontSize = 24.sp
+        )
+    }
 }
 
-
-@Preview(showBackground = true)
+@Preview(showBackground = false)
 @Composable
 fun BirthdayCardPreview() {
     HappyBirthdayTheme {
