@@ -4,14 +4,12 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -30,7 +28,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    BirthdayGreetingWithImage("Happy Birthday Nelly!", "- from Blaine")
+                    BirthdayGreetingWithImage(getString(R.string.happy_birthday_text), getString(R.string.signature_text))
                 }
             }
         }
@@ -48,7 +46,11 @@ fun BirthdayGreetingWithImage(message: String, from: String, modifier: Modifier 
             contentScale = ContentScale.Crop
         )
     }
-    Column {
+    Column (
+        modifier = modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Top,
+        horizontalAlignment = Alignment.CenterHorizontally
+            ){
         Text(
             text = message,
             fontSize = 36.sp,
@@ -62,10 +64,8 @@ fun BirthdayGreetingWithImage(message: String, from: String, modifier: Modifier 
             text = from,
             fontSize = 24.sp,
             modifier = Modifier
-                .padding(
-                    top = 16.dp,
-                    start = 160.dp
-                )
+                .padding(top = 16.dp, start = 320.dp)
+                .align(alignment = Alignment.End)
         )
     }
 }
