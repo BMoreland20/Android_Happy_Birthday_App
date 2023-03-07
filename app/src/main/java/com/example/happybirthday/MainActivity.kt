@@ -54,7 +54,8 @@ fun BirthdayGreetingWithImage(message: String, from: String, modifier: Modifier 
             fontSize = 36.sp,
             modifier = Modifier
                 .padding(
-                    top = 128.dp
+                    top = 32.dp,
+                    start = 64.dp
                 )
         )
         Text(
@@ -62,7 +63,8 @@ fun BirthdayGreetingWithImage(message: String, from: String, modifier: Modifier 
             fontSize = 24.sp,
             modifier = Modifier
                 .padding(
-                    top = 16.dp
+                    top = 16.dp,
+                    start = 160.dp
                 )
         )
     }
