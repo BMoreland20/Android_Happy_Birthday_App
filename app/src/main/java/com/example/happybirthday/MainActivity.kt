@@ -55,10 +55,8 @@ fun BirthdayGreetingWithImage(message: String, from: String, modifier: Modifier 
             text = message,
             fontSize = 36.sp,
             modifier = Modifier
-                .padding(
-                    top = 32.dp,
-                    start = 64.dp
-                )
+                .padding(top = 32.dp, start = 24.dp)
+                .align(alignment = Alignment.CenterHorizontally)
         )
         Text(
             text = from,
