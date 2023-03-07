@@ -38,7 +38,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun BirthdayGreetingWithImage(message: String, from: String, modifier: Modifier = Modifier) {
     val image = painterResource(R.drawable.androidparty)
-    //Creating a box to overlap image and texts
+    // Creating a column so that texts don't overlap
     Box {
         Image(
             painter = image,
